@@ -27,10 +27,13 @@ class AsyncLlamaServer(AsyncChat):
     key = "sk-llama-server"
 
     def __init__(self, **kwargs):
+        host = os.getenv("LLAMACPP_HOST", "http://localhost:8080")
+        api_base_url = f"{host.rstrip('/')}/v1"
+
         super().__init__(
             model_name="llama-server",
             model_id=self.model_id,
-            api_base="http://localhost:8080/v1",
+            api_base=api_base_url,
             **kwargs,
         )
 
