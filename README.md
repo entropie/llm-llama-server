@@ -15,7 +15,7 @@ llm install llm-llama-server
 ```
 ## Usage
 
-You'll need to be running a [llama-server](https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md) on port 8080 to use this plugin.
+You'll need a running instance of [llama-server](https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md). By default, it connects to `http://127.0.0.1:8080`. You can specify a different host and port by setting the `LLAMACIP_HOST` environment variable, for example: `export LLAMACPP_HOST="http://your-server-ip:8080"`.
 
 You can `brew install llama.cpp` to obtain that binary. Then run it like this:
 ```bash
